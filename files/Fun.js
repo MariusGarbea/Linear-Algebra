@@ -2,7 +2,7 @@ import React from 'react';
 
 const Fun = () => (
   <div>
-    <h1 style={{textAlign: "center"}}>Fun Facts about Math</h1>
+    <h1 className="title">Fun Facts about Math</h1>
     <ul className="fun">
       <li>If you write out <i>pi</i> to two decimal places, backwards it spells <i>pie</i>.</li><br />
       <li>Theorem: For any given linear algebra class, there exists a student who will reference the 1999 film <i>The Matrix</i>.</li><br />

@@ -18,8 +18,8 @@ class Quiz extends React.Component {
   render () {
     return (
       <div>
-        <h1 style={{textAlign: "center"}}>Quiz</h1>
-        <form style={{fontSize: "20px", margin: "5%"}}>
+        <h1 className="title">Quiz</h1>
+        <form style={{fontSize: "20px", margin: "5%", color: "black"}}>
           <img src="multimedia/q1.jpg"/>
           <div style={{marginTop: "10px"}}><input type="radio" name="q1" value="1" id="11" style={{marginRight: "10px"}}/>132 {(this.state.answered && document.getElementById('11').checked) ? <i className="fa fa-check" aria-hidden="true" style={{color: "green"}}/>: ""}</div>
           <div><input type="radio" name="q1" value="2" id="12" style={{marginRight: "10px"}}/>128 {(this.state.answered && document.getElementById('12').checked) ? <i className="fa fa-times" aria-hidden="true" style={{color: "red"}}/>: ""}</div>

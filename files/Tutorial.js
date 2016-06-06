@@ -3,7 +3,7 @@ import {Button} from 'react-bootstrap';
 
 const Tutorial = () => (
   <div>
-    <h1 style={{textAlign: "center"}}>Tutorial</h1>
+    <h1 className="title">Tutorial</h1>
     <div className="wlcm" style={{paddingTop: "5%", paddingBottom: "5%"}}>
       <p>Real numbers can be used to convey one-dimensional information, such as a family’s total expenditure in a month.
         However, if one wants to record the monthly expenditures of two families on three items — food, entertainment, and health — then one needs to use a rectangular array of real numbers, or a matrix.

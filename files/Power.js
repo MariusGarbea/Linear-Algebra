@@ -3,8 +3,8 @@ import {Button} from 'react-bootstrap';
 
 const Power = () => (
   <div>
-    <h1 style={{textAlign: "center"}} className="calctext">Calculator</h1>
-    <h2 style={{textAlign: "center"}} className="calctext">Matrix Power</h2>
+    <h1 className="title">Calculator</h1>
+    <h2 className="title">Matrix Power</h2>
     <div style={{background: 'url(multimedia/paper.jpg)'}}>
       <img src="multimedia/progress.jpg" className="img" />
       <Button bsClass="bttn" href="multimedia/power.exe">Download the Matrix Power Calculator (C++)</Button>

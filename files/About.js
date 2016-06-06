@@ -3,7 +3,7 @@ import {Button, Grid, Row, Col, Thumbnail} from 'react-bootstrap';
 
 const About = () => (
   <div>
-    <h1 style={{textAlign: "center"}}>About Us</h1>
+    <h1 className="title">About Us</h1>
     <div className="about">
       <p style={{padding: "5% 15%"}}>We are Diana and Marius, two prospective students currently in the 11<span>th</span> grade at the best STEM high-school in Romania:
         <i> Tudor Vianu National High-School of Computer Science.</i> <br /> <br />

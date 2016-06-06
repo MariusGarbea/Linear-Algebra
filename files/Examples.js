@@ -3,7 +3,7 @@ import {Grid, Row, Col} from 'react-bootstrap';
 
 const Examples = () => (
   <div>
-    <h1 style={{textAlign: "center"}}>Examples</h1>
+    <h1 className="title">Examples</h1>
     <Grid fluid>
       <Row><Col md={8} xs={12}><img src="multimedia/addition.jpg" /></Col><Col md={4} xs={12}><h2 style={{display: "inline"}}>Addition of 2 Matrices</h2></Col></Row><br /><hr className="style-one" />
       <Row><Col md={8} xs={12}><img src="multimedia/subtraction.jpg" /></Col><Col md={4} xs={12}><h2 style={{display: "inline"}}>Subtraction of 2 Matrices</h2></Col></Row><br /><hr className="style-one" />

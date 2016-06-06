@@ -3,8 +3,8 @@ import {Button, FormGroup, ControlLabel, FormControl, Grid, Row, Col} from 'reac
 
 const Transpose = () => (
   <div>
-    <h1 style={{textAlign: "center"}} className="calctext">Calculator</h1>
-    <h2 style={{textAlign: "center"}} className="calctext">Matrices Transposition</h2>
+    <h1 className="title">Calculator</h1>
+    <h2 className="title">Matrices Transposition</h2>
     <TransposeCalc />
     <h2 className="mathquotes"><i>Pure mathematics is, in its way, the poetry of logical ideas. ~ Albert Einstein</i></h2>
   </div>
