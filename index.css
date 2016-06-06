@@ -188,6 +188,6 @@ span {
 .fun {
   font-size: 25px;
   padding: 5% 15%;
-  background: url('../multimedia/paper.jpg');
+  background: url("../multimedia/paper.jpg");
   font-family: 'IM Fell English', serif;
 }
