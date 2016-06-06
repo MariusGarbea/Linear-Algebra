@@ -6,6 +6,11 @@ body {
 
 /*TOOLBAR AND GENERAL PAGE SETTINGS*/
 
+.title {
+  text-align: center;
+  font-family: 'Courgette', cursive;
+}
+
 .tbr {
   padding: 10px;
 }

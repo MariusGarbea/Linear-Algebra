@@ -45451,7 +45451,7 @@
 	    null,
 	    _react2.default.createElement(
 	      "h1",
-	      { style: { textAlign: "center" } },
+	      { className: "title" },
 	      "Welcome"
 	    ),
 	    _react2.default.createElement(
@@ -45507,7 +45507,7 @@
 	    null,
 	    _react2.default.createElement(
 	      'h1',
-	      { style: { textAlign: "center" } },
+	      { className: 'title' },
 	      'Tutorial'
 	    ),
 	    _react2.default.createElement(
@@ -45606,7 +45606,7 @@
 	    null,
 	    _react2.default.createElement(
 	      'h1',
-	      { style: { textAlign: "center" } },
+	      { className: 'title' },
 	      'Examples'
 	    ),
 	    _react2.default.createElement(
@@ -45801,12 +45801,12 @@
 	        null,
 	        _react2.default.createElement(
 	          'h1',
-	          { style: { textAlign: "center" } },
+	          { className: 'title' },
 	          'Quiz'
 	        ),
 	        _react2.default.createElement(
 	          'form',
-	          { style: { fontSize: "20px", margin: "5%" } },
+	          { style: { fontSize: "20px", margin: "5%", color: "black" } },
 	          _react2.default.createElement('img', { src: 'multimedia/q1.jpg' }),
 	          _react2.default.createElement(
 	            'div',
@@ -46093,12 +46093,12 @@
 	    null,
 	    _react2.default.createElement(
 	      'h1',
-	      { style: { textAlign: "center" }, className: 'calctext' },
+	      { className: 'title' },
 	      'Calculator'
 	    ),
 	    _react2.default.createElement(
 	      'h2',
-	      { style: { textAlign: "center" }, className: 'calctext' },
+	      { className: 'title' },
 	      'Matrices Addition'
 	    ),
 	    _react2.default.createElement(PlusCalc, null),
@@ -46266,12 +46266,12 @@
 	    null,
 	    _react2.default.createElement(
 	      'h1',
-	      { style: { textAlign: "center" }, className: 'calctext' },
+	      { className: 'title' },
 	      'Calculator'
 	    ),
 	    _react2.default.createElement(
 	      'h2',
-	      { style: { textAlign: "center" }, className: 'calctext' },
+	      { className: 'title' },
 	      'Matrices Subtraction'
 	    ),
 	    _react2.default.createElement(MinusCalc, null),
@@ -46439,12 +46439,12 @@
 	    null,
 	    _react2.default.createElement(
 	      'h1',
-	      { style: { textAlign: "center" }, className: 'calctext' },
+	      { className: 'title' },
 	      'Calculator'
 	    ),
 	    _react2.default.createElement(
 	      'h2',
-	      { style: { textAlign: "center" }, className: 'calctext' },
+	      { className: 'title' },
 	      'Matrices Multiplication'
 	    ),
 	    _react2.default.createElement(TimesCalc, null),
@@ -46608,12 +46608,12 @@
 	    null,
 	    _react2.default.createElement(
 	      'h1',
-	      { style: { textAlign: "center" }, className: 'calctext' },
+	      { className: 'title' },
 	      'Calculator'
 	    ),
 	    _react2.default.createElement(
 	      'h2',
-	      { style: { textAlign: "center" }, className: 'calctext' },
+	      { className: 'title' },
 	      'Matrix Power'
 	    ),
 	    _react2.default.createElement(
@@ -46672,12 +46672,12 @@
 	    null,
 	    _react2.default.createElement(
 	      'h1',
-	      { style: { textAlign: "center" }, className: 'calctext' },
+	      { className: 'title' },
 	      'Calculator'
 	    ),
 	    _react2.default.createElement(
 	      'h2',
-	      { style: { textAlign: "center" }, className: 'calctext' },
+	      { className: 'title' },
 	      'Matrices Transposition'
 	    ),
 	    _react2.default.createElement(TransposeCalc, null),
@@ -46814,12 +46814,12 @@
 	    null,
 	    _react2.default.createElement(
 	      'h1',
-	      { style: { textAlign: "center" }, className: 'calctext' },
+	      { className: 'title' },
 	      'Calculator'
 	    ),
 	    _react2.default.createElement(
 	      'h2',
-	      { style: { textAlign: "center" }, className: 'calctext' },
+	      { className: 'title' },
 	      'Matrix Inversion'
 	    ),
 	    _react2.default.createElement(
@@ -46878,7 +46878,7 @@
 	    null,
 	    _react2.default.createElement(
 	      'h1',
-	      { style: { textAlign: "center" } },
+	      { className: 'title' },
 	      'About Us'
 	    ),
 	    _react2.default.createElement(
@@ -47040,7 +47040,7 @@
 	    null,
 	    _react2.default.createElement(
 	      "h1",
-	      { style: { textAlign: "center" } },
+	      { className: "title" },
 	      "Fun Facts about Math"
 	    ),
 	    _react2.default.createElement(
