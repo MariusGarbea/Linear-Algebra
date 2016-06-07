@@ -46906,7 +46906,7 @@
 	      _react2.default.createElement('br', null),
 	      _react2.default.createElement(
 	        _reactBootstrap.Button,
-	        { bsClass: 'bttn', href: 'multimedia/inverse.exe' },
+	        { bsClass: 'bttn', href: 'multimedia/gauss.exe' },
 	        'Download the System Solver (C++)'
 	      )
 	    ),
