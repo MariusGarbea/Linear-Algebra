@@ -100,11 +100,15 @@
 
 	var _Inverse2 = _interopRequireDefault(_Inverse);
 
-	var _About = __webpack_require__(504);
+	var _Gauss = __webpack_require__(504);
+
+	var _Gauss2 = _interopRequireDefault(_Gauss);
+
+	var _About = __webpack_require__(505);
 
 	var _About2 = _interopRequireDefault(_About);
 
-	var _Fun = __webpack_require__(505);
+	var _Fun = __webpack_require__(506);
 
 	var _Fun2 = _interopRequireDefault(_Fun);
 
@@ -133,6 +137,7 @@
 	      _react2.default.createElement(_reactRouter.Route, { path: 'calculator/power', component: _Power2.default }),
 	      _react2.default.createElement(_reactRouter.Route, { path: 'calculator/transpose', component: _Transpose2.default }),
 	      _react2.default.createElement(_reactRouter.Route, { path: 'calculator/inverse', component: _Inverse2.default }),
+	      _react2.default.createElement(_reactRouter.Route, { path: 'calculator/gauss', component: _Gauss2.default }),
 	      _react2.default.createElement(_reactRouter.Route, { path: 'about', component: _About2.default }),
 	      _react2.default.createElement(_reactRouter.Route, { path: 'fun', component: _Fun2.default })
 	    )
@@ -402,6 +407,20 @@
 	          'strong',
 	          null,
 	          'Inverse'
+	        )
+	      )
+	    ),
+	    _react2.default.createElement('br', null),
+	    _react2.default.createElement(
+	      _reactRouter.Link,
+	      { to: 'calculator/gauss' },
+	      _react2.default.createElement(
+	        _reactBootstrap.Button,
+	        { bsClass: 'bttn' },
+	        _react2.default.createElement(
+	          'strong',
+	          null,
+	          'Solve system'
 	        )
 	      )
 	    )
@@ -45564,7 +45583,7 @@
 	      ),
 	      _react2.default.createElement(
 	        _reactBootstrap.Button,
-	        { bsClass: 'bttn', href: '../multimedia/matrici.jpg' },
+	        { bsClass: 'bttn', href: 'multimedia/matrici.jpg' },
 	        'Download our Cheat Sheet'
 	      )
 	    ),
@@ -46618,8 +46637,9 @@
 	    ),
 	    _react2.default.createElement(
 	      'div',
-	      { style: { background: 'url(multimedia/paper.jpg)' } },
+	      { style: { background: 'url(multimedia/paper.jpg)', textAlign: "center" } },
 	      _react2.default.createElement('img', { src: 'multimedia/progress.jpg', className: 'img' }),
+	      _react2.default.createElement('br', null),
 	      _react2.default.createElement(
 	        _reactBootstrap.Button,
 	        { bsClass: 'bttn', href: 'multimedia/power.exe' },
@@ -46820,12 +46840,13 @@
 	    _react2.default.createElement(
 	      'h2',
 	      { className: 'title' },
-	      'Matrix Inversion'
+	      'Matrix Inverse'
 	    ),
 	    _react2.default.createElement(
 	      'div',
-	      { style: { background: 'url(multimedia/paper.jpg)' } },
+	      { style: { background: 'url(multimedia/paper.jpg)', textAlign: "center" } },
 	      _react2.default.createElement('img', { src: 'multimedia/progress.jpg', className: 'img' }),
+	      _react2.default.createElement('br', null),
 	      _react2.default.createElement(
 	        _reactBootstrap.Button,
 	        { bsClass: 'bttn', href: 'multimedia/inverse.exe' },
@@ -46848,6 +46869,63 @@
 
 /***/ },
 /* 504 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactBootstrap = __webpack_require__(168);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Gauss = function Gauss() {
+	  return _react2.default.createElement(
+	    'div',
+	    null,
+	    _react2.default.createElement(
+	      'h1',
+	      { className: 'title' },
+	      'Calculator'
+	    ),
+	    _react2.default.createElement(
+	      'h2',
+	      { className: 'title' },
+	      'System Solver'
+	    ),
+	    _react2.default.createElement(
+	      'div',
+	      { style: { background: 'url(multimedia/paper.jpg)', textAlign: "center" } },
+	      _react2.default.createElement('img', { src: 'multimedia/progress.jpg', className: 'img' }),
+	      _react2.default.createElement('br', null),
+	      _react2.default.createElement(
+	        _reactBootstrap.Button,
+	        { bsClass: 'bttn', href: 'multimedia/inverse.exe' },
+	        'Download the System Solver (C++)'
+	      )
+	    ),
+	    _react2.default.createElement(
+	      'h2',
+	      { className: 'mathquotes' },
+	      _react2.default.createElement(
+	        'i',
+	        null,
+	        'Pure mathematics is, in its way, the poetry of logical ideas. ~ Albert Einstein'
+	      )
+	    )
+	  );
+	};
+
+	exports.default = Gauss;
+
+/***/ },
+/* 505 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -47019,7 +47097,7 @@
 	exports.default = About;
 
 /***/ },
-/* 505 */
+/* 506 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
