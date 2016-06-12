@@ -119,14 +119,21 @@ span {
 
 /* CALCULATOR SECTION */
 
-#matrix1, #matrix2, #rez {
+.calc {
+  text-align: center;
+  padding-top: 20vh;
+  padding-bottom: 20vh;
+  background: url('multimedia/paper.jpg');
+}
+
+#matrix1, #matrix2, #rez, #constants {
   width: 200px;
   height: 200px;
   text-align: center;
   font-size: 20px;
 }
 
-#columnsNumber1, #columnsNumber2, #rowsNumber1, #rowsNumber2 {
+#columnsNumber1, #columnsNumber2, #rowsNumber1, #rowsNumber2, #size {
   width: 95px;
   margin-right: 5px;
   margin-left: 5px;

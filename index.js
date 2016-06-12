@@ -46184,7 +46184,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'form',
-	        { style: { textAlign: "center", paddingTop: "20vh", paddingBottom: "20vh", background: "url(multimedia/paper.jpg)" } },
+	        { className: 'calc' },
 	        _react2.default.createElement(
 	          _reactBootstrap.Grid,
 	          null,
@@ -46204,8 +46204,8 @@
 	                ),
 	                _react2.default.createElement(_reactBootstrap.FormControl, { componentClass: 'textarea', placeholder: 'Matrix 1 elements separated by space', style: { margin: "auto" } })
 	              ),
-	              _react2.default.createElement('input', { id: 'rowsNumber1', type: 'number', placeholder: 'Rows', min: '1', max: '10' }),
-	              _react2.default.createElement('input', { id: 'columnsNumber1', type: 'number', placeholder: 'Columns', min: '1', max: '10' })
+	              _react2.default.createElement('input', { id: 'rowsNumber1', type: 'number', placeholder: 'Rows', min: '1', max: '100' }),
+	              _react2.default.createElement('input', { id: 'columnsNumber1', type: 'number', placeholder: 'Columns', min: '1', max: '100' })
 	            ),
 	            _react2.default.createElement(
 	              _reactBootstrap.Col,
@@ -46220,8 +46220,8 @@
 	                ),
 	                _react2.default.createElement(_reactBootstrap.FormControl, { componentClass: 'textarea', placeholder: 'Matrix 2 elements separated by space', style: { margin: "auto" } })
 	              ),
-	              _react2.default.createElement('input', { id: 'rowsNumber2', type: 'number', placeholder: 'Rows', min: '1', max: '10' }),
-	              _react2.default.createElement('input', { id: 'columnsNumber2', type: 'number', placeholder: 'Columns', min: '1', max: '10' })
+	              _react2.default.createElement('input', { id: 'rowsNumber2', type: 'number', placeholder: 'Rows', min: '1', max: '100' }),
+	              _react2.default.createElement('input', { id: 'columnsNumber2', type: 'number', placeholder: 'Columns', min: '1', max: '100' })
 	            ),
 	            _react2.default.createElement(
 	              _reactBootstrap.Col,
@@ -46357,7 +46357,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'form',
-	        { style: { textAlign: "center", paddingTop: "20vh", paddingBottom: "20vh", background: "url(multimedia/paper.jpg)" } },
+	        { className: 'calc' },
 	        _react2.default.createElement(
 	          _reactBootstrap.Grid,
 	          null,
@@ -46534,7 +46534,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'form',
-	        { style: { textAlign: "center", paddingTop: "20vh", paddingBottom: "20vh", background: "url(multimedia/paper.jpg)" } },
+	        { className: 'calc' },
 	        _react2.default.createElement(
 	          _reactBootstrap.Grid,
 	          null,
@@ -46613,6 +46613,8 @@
 	  value: true
 	});
 
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -46620,6 +46622,12 @@
 	var _reactBootstrap = __webpack_require__(168);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var Power = function Power() {
 	  return _react2.default.createElement(
@@ -46635,17 +46643,7 @@
 	      { className: 'title' },
 	      'Matrix Power'
 	    ),
-	    _react2.default.createElement(
-	      'div',
-	      { style: { background: 'url(multimedia/paper.jpg)', textAlign: "center" } },
-	      _react2.default.createElement('img', { src: 'multimedia/progress.jpg', className: 'img' }),
-	      _react2.default.createElement('br', null),
-	      _react2.default.createElement(
-	        _reactBootstrap.Button,
-	        { bsClass: 'bttn', href: 'multimedia/power.exe' },
-	        'Download the Matrix Power Calculator (C++)'
-	      )
-	    ),
+	    _react2.default.createElement(PowerCalc, null),
 	    _react2.default.createElement(
 	      'h2',
 	      { className: 'mathquotes' },
@@ -46657,6 +46655,114 @@
 	    )
 	  );
 	};
+
+	var PowerCalc = function (_React$Component) {
+	  _inherits(PowerCalc, _React$Component);
+
+	  function PowerCalc() {
+	    _classCallCheck(this, PowerCalc);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(PowerCalc).apply(this, arguments));
+	  }
+
+	  _createClass(PowerCalc, [{
+	    key: 'solve',
+	    value: function solve() {
+	      var r1 = [],
+	          r2 = [],
+	          r3 = [],
+	          c,
+	          result = "";
+	      var mat1 = document.getElementById("matrix1").value.split(/\s+/);
+	      var size = parseInt(document.getElementById("size").value, 10);
+	      var power = document.getElementById("power").value;
+	      while (mat1[0]) {
+	        r1.push(mat1.splice(0, size));
+	      }
+	      r2 = JSON.parse(JSON.stringify(r1));
+	      for (var a = 0; a < power - 1; a++) {
+	        r3.length = 0;
+	        result = '';
+	        for (var i = 0; i < size; i++) {
+	          for (var j = 0; j < size; j++) {
+	            c = 0;
+	            for (var k = 0; k < size; k++) {
+	              var _a = parseInt(r1[i][k]);
+	              var b = parseInt(r2[k][j]);
+	              c += _a * b;
+	            }
+	            result += c + ' ';
+	            r3.push(c);
+	          }
+	          result += "\n";
+	        }
+	        for (var m in r2) {
+	          for (var n in r2) {
+	            r2[m][n] = r3[n];
+	          }
+	        }
+	      }
+	      document.getElementById("rez").value = result;
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'form',
+	        { className: 'calc' },
+	        _react2.default.createElement(
+	          _reactBootstrap.Grid,
+	          null,
+	          _react2.default.createElement(
+	            _reactBootstrap.Row,
+	            null,
+	            _react2.default.createElement(
+	              _reactBootstrap.Col,
+	              { md: 4, xs: 12 },
+	              _react2.default.createElement(
+	                _reactBootstrap.FormGroup,
+	                { controlId: 'matrix1' },
+	                _react2.default.createElement(
+	                  _reactBootstrap.ControlLabel,
+	                  { className: 'controllabel' },
+	                  'Matrix 1'
+	                ),
+	                _react2.default.createElement(_reactBootstrap.FormControl, { componentClass: 'textarea', placeholder: 'Matrix 1 elements separated by space', style: { margin: "auto" } })
+	              ),
+	              _react2.default.createElement('input', { id: 'size', type: 'number', placeholder: 'Size', min: '1', max: '1000', style: { width: "200px" } })
+	            ),
+	            _react2.default.createElement(
+	              _reactBootstrap.Col,
+	              { md: 4, xs: 12, style: { height: "200px" } },
+	              _react2.default.createElement('input', { id: 'power', type: 'number', placeholder: 'Power', min: '1', max: '1000' }),
+	              _react2.default.createElement(
+	                _reactBootstrap.Button,
+	                { bsClass: 'bttn', style: { width: "200px", height: "40px", marginTop: "105px" }, onClick: this.solve },
+	                'Power the Matrix'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              _reactBootstrap.Col,
+	              { md: 4, xs: 12 },
+	              _react2.default.createElement(
+	                _reactBootstrap.FormGroup,
+	                { controlId: 'rez' },
+	                _react2.default.createElement(
+	                  _reactBootstrap.ControlLabel,
+	                  { className: 'controllabel' },
+	                  'Resulting Matrix'
+	                ),
+	                _react2.default.createElement(_reactBootstrap.FormControl, { componentClass: 'textarea', placeholder: 'Result', style: { margin: "auto" } })
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return PowerCalc;
+	}(_react2.default.Component);
 
 	exports.default = Power;
 
@@ -46728,32 +46834,25 @@
 	      var r1 = [],
 	          result = "";
 	      var mat1 = document.getElementById("matrix1").value.split(/\s+/);
-	      var nrC1 = document.getElementById("columnsNumber1").value;
-	      var nrL1 = document.getElementById("rowsNumber1").value;
-	      var L1 = parseInt(nrL1, 10);
-	      var C1 = parseInt(nrC1, 10);
+	      var size = parseInt(document.getElementById("size").value, 10);
 	      while (mat1[0]) {
-	        r1.push(mat1.splice(0, C1));
+	        r1.push(mat1.splice(0, size));
 	      }
-	      if (L1 !== C1) {
-	        document.getElementById("rez").value = "Matrix is not a Square Matrix.";
-	      } else {
-	        for (var i = 0; i < L1; i++) {
-	          for (var j = 0; j < C1; j++) {
-	            var a = parseInt(r1[j][i]);
-	            result += a.toString() + " ";
-	          }
-	          result += "\n";
+	      for (var i = 0; i < size; i++) {
+	        for (var j = 0; j < size; j++) {
+	          var a = parseInt(r1[j][i]);
+	          result += a.toString() + " ";
 	        }
-	        document.getElementById("rez").value = result;
+	        result += "\n";
 	      }
+	      document.getElementById("rez").value = result;
 	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'form',
-	        { style: { textAlign: "center", paddingTop: "20vh", paddingBottom: "20vh", background: "url(multimedia/paper.jpg)" } },
+	        { className: 'calc' },
 	        _react2.default.createElement(
 	          _reactBootstrap.Grid,
 	          null,
@@ -46773,8 +46872,7 @@
 	                ),
 	                _react2.default.createElement(_reactBootstrap.FormControl, { componentClass: 'textarea', placeholder: 'Matrix 1 elements separated by space', style: { margin: "auto" } })
 	              ),
-	              _react2.default.createElement('input', { id: 'rowsNumber1', type: 'number', placeholder: 'Rows', min: '1', max: '10' }),
-	              _react2.default.createElement('input', { id: 'columnsNumber1', type: 'number', placeholder: 'Columns', min: '1', max: '10' })
+	              _react2.default.createElement('input', { id: 'size', type: 'number', placeholder: 'Size', min: '1', max: '100', style: { width: "200px" } })
 	            ),
 	            _react2.default.createElement(
 	              _reactBootstrap.Col,
@@ -46820,6 +46918,8 @@
 	  value: true
 	});
 
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -46827,6 +46927,12 @@
 	var _reactBootstrap = __webpack_require__(168);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var Inverse = function Inverse() {
 	  return _react2.default.createElement(
@@ -46840,19 +46946,9 @@
 	    _react2.default.createElement(
 	      'h2',
 	      { className: 'title' },
-	      'Matrix Inverse'
+	      'Matrix Power'
 	    ),
-	    _react2.default.createElement(
-	      'div',
-	      { style: { background: 'url(multimedia/paper.jpg)', textAlign: "center" } },
-	      _react2.default.createElement('img', { src: 'multimedia/progress.jpg', className: 'img' }),
-	      _react2.default.createElement('br', null),
-	      _react2.default.createElement(
-	        _reactBootstrap.Button,
-	        { bsClass: 'bttn', href: 'multimedia/inverse.exe' },
-	        'Download the Matrix Inverse Calculator (C++)'
-	      )
-	    ),
+	    _react2.default.createElement(InverseCalc, null),
 	    _react2.default.createElement(
 	      'h2',
 	      { className: 'mathquotes' },
@@ -46864,6 +46960,93 @@
 	    )
 	  );
 	};
+
+	var InverseCalc = function (_React$Component) {
+	  _inherits(InverseCalc, _React$Component);
+
+	  function InverseCalc() {
+	    _classCallCheck(this, InverseCalc);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(InverseCalc).apply(this, arguments));
+	  }
+
+	  _createClass(InverseCalc, [{
+	    key: 'solve',
+	    value: function solve() {
+	      var r1 = [],
+	          result = "";
+	      var mat1 = document.getElementById("matrix1").value.split(/\s+/);
+	      var size = parseInt(document.getElementById("size").value, 10);
+	      while (mat1[0]) {
+	        r1.push(mat1.splice(0, size));
+	      }
+	      for (var i = 0; i < size; i++) {
+	        for (var j = 0; j < size; j++) {
+	          var a = parseInt(r1[j][i]);
+	          result += a.toString() + " ";
+	        }
+	        result += "\n";
+	      }
+	      document.getElementById("rez").value = result;
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'form',
+	        { className: 'calc' },
+	        _react2.default.createElement(
+	          _reactBootstrap.Grid,
+	          null,
+	          _react2.default.createElement(
+	            _reactBootstrap.Row,
+	            null,
+	            _react2.default.createElement(
+	              _reactBootstrap.Col,
+	              { md: 4, xs: 12 },
+	              _react2.default.createElement(
+	                _reactBootstrap.FormGroup,
+	                { controlId: 'matrix1' },
+	                _react2.default.createElement(
+	                  _reactBootstrap.ControlLabel,
+	                  { className: 'controllabel' },
+	                  'Matrix 1'
+	                ),
+	                _react2.default.createElement(_reactBootstrap.FormControl, { componentClass: 'textarea', placeholder: 'Matrix 1 elements separated by space', style: { margin: "auto" } })
+	              ),
+	              _react2.default.createElement('input', { id: 'size', type: 'number', placeholder: 'Size', min: '1', max: '100', style: { width: "200px" } })
+	            ),
+	            _react2.default.createElement(
+	              _reactBootstrap.Col,
+	              { md: 4, xs: 12, style: { height: "200px" } },
+	              _react2.default.createElement(
+	                _reactBootstrap.Button,
+	                { bsClass: 'bttn', style: { width: "200px", height: "40px", marginTop: "105px" }, onClick: this.solve },
+	                'Inverse the Matrix'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              _reactBootstrap.Col,
+	              { md: 4, xs: 12 },
+	              _react2.default.createElement(
+	                _reactBootstrap.FormGroup,
+	                { controlId: 'rez' },
+	                _react2.default.createElement(
+	                  _reactBootstrap.ControlLabel,
+	                  { className: 'controllabel' },
+	                  'Resulting Matrix'
+	                ),
+	                _react2.default.createElement(_reactBootstrap.FormControl, { componentClass: 'textarea', placeholder: 'Result', style: { margin: "auto" } })
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return InverseCalc;
+	}(_react2.default.Component);
 
 	exports.default = Inverse;
 
@@ -46877,6 +47060,8 @@
 	  value: true
 	});
 
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -46884,6 +47069,12 @@
 	var _reactBootstrap = __webpack_require__(168);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var Gauss = function Gauss() {
 	  return _react2.default.createElement(
@@ -46899,17 +47090,7 @@
 	      { className: 'title' },
 	      'System Solver'
 	    ),
-	    _react2.default.createElement(
-	      'div',
-	      { style: { background: 'url(multimedia/paper.jpg)', textAlign: "center" } },
-	      _react2.default.createElement('img', { src: 'multimedia/progress.jpg', className: 'img' }),
-	      _react2.default.createElement('br', null),
-	      _react2.default.createElement(
-	        _reactBootstrap.Button,
-	        { bsClass: 'bttn', href: 'multimedia/inverse.exe' },
-	        'Download the System Solver (C++)'
-	      )
-	    ),
+	    _react2.default.createElement(GaussCalc, null),
 	    _react2.default.createElement(
 	      'h2',
 	      { className: 'mathquotes' },
@@ -46921,6 +47102,115 @@
 	    )
 	  );
 	};
+
+	var GaussCalc = function (_React$Component) {
+	  _inherits(GaussCalc, _React$Component);
+
+	  function GaussCalc() {
+	    _classCallCheck(this, GaussCalc);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(GaussCalc).apply(this, arguments));
+	  }
+
+	  _createClass(GaussCalc, [{
+	    key: 'solve',
+	    value: function solve() {
+	      var r1 = [],
+	          result = "";
+	      var mat1 = document.getElementById("matrix1").value.split(/\s+/);
+	      var nrC1 = document.getElementById("columnsNumber1").value;
+	      var nrL1 = document.getElementById("rowsNumber1").value;
+	      var L1 = parseInt(nrL1, 10);
+	      var C1 = parseInt(nrC1, 10);
+	      while (mat1[0]) {
+	        r1.push(mat1.splice(0, C1));
+	      }
+	      if (L1 !== C1) {
+	        document.getElementById("rez").value = "Matrix is not a Square Matrix.";
+	      } else {
+	        for (var i = 0; i < L1; i++) {
+	          for (var j = 0; j < C1; j++) {
+	            var a = parseInt(r1[j][i]);
+	            result += a.toString() + " ";
+	          }
+	          result += "\n";
+	        }
+	        document.getElementById("rez").value = result;
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'form',
+	        { className: 'calc' },
+	        _react2.default.createElement(
+	          _reactBootstrap.Grid,
+	          null,
+	          _react2.default.createElement(
+	            _reactBootstrap.Row,
+	            null,
+	            _react2.default.createElement(
+	              _reactBootstrap.Col,
+	              { md: 3, xs: 12 },
+	              _react2.default.createElement(
+	                _reactBootstrap.FormGroup,
+	                { controlId: 'matrix1' },
+	                _react2.default.createElement(
+	                  _reactBootstrap.ControlLabel,
+	                  { className: 'controllabel' },
+	                  'Matrix 1'
+	                ),
+	                _react2.default.createElement(_reactBootstrap.FormControl, { componentClass: 'textarea', placeholder: 'Matrix 1 elements separated by space', style: { margin: "auto" } })
+	              ),
+	              _react2.default.createElement('input', { id: 'rowsNumber1', type: 'number', placeholder: 'Rows', min: '1', max: '100' }),
+	              _react2.default.createElement('input', { id: 'columnsNumber1', type: 'number', placeholder: 'Columns', min: '1', max: '100' })
+	            ),
+	            _react2.default.createElement(
+	              _reactBootstrap.Col,
+	              { md: 3, xs: 12 },
+	              _react2.default.createElement(
+	                _reactBootstrap.FormGroup,
+	                { controlId: 'constants' },
+	                _react2.default.createElement(
+	                  _reactBootstrap.ControlLabel,
+	                  { className: 'controllabel' },
+	                  'Constants'
+	                ),
+	                _react2.default.createElement(_reactBootstrap.FormControl, { componentClass: 'textarea', placeholder: 'The Constants of the System', style: { margin: "auto" } })
+	              )
+	            ),
+	            _react2.default.createElement(
+	              _reactBootstrap.Col,
+	              { md: 3, xs: 12, style: { height: "200px" } },
+	              _react2.default.createElement(
+	                _reactBootstrap.Button,
+	                { bsClass: 'bttn', style: { width: "200px", height: "40px", marginTop: "105px" }, onClick: this.solve },
+	                'Solve the System'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              _reactBootstrap.Col,
+	              { md: 3, xs: 12 },
+	              _react2.default.createElement(
+	                _reactBootstrap.FormGroup,
+	                { controlId: 'rez' },
+	                _react2.default.createElement(
+	                  _reactBootstrap.ControlLabel,
+	                  { className: 'controllabel' },
+	                  'Resulting Matrix'
+	                ),
+	                _react2.default.createElement(_reactBootstrap.FormControl, { componentClass: 'textarea', placeholder: 'Result', style: { margin: "auto" } })
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return GaussCalc;
+	}(_react2.default.Component);
 
 	exports.default = Gauss;
 
