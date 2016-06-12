@@ -1,1 +1,1 @@
-# Calcule-Matriceale
+# Linear Algebra Learning Platform
