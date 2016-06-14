@@ -46973,21 +46973,75 @@
 	  _createClass(InverseCalc, [{
 	    key: 'solve',
 	    value: function solve() {
-	      var r1 = [],
-	          result = "";
+	      document.getElementById("rez").value = '';
+	      var M = [];
 	      var mat1 = document.getElementById("matrix1").value.split(/\s+/);
-	      var size = parseInt(document.getElementById("size").value, 10);
+	      var dim = parseInt(document.getElementById("size").value, 10);
 	      while (mat1[0]) {
-	        r1.push(mat1.splice(0, size));
+	        M.push(mat1.splice(0, dim));
 	      }
-	      for (var i = 0; i < size; i++) {
-	        for (var j = 0; j < size; j++) {
-	          var a = parseInt(r1[j][i]);
-	          result += a.toString() + " ";
+	      var i = 0,
+	          ii = 0,
+	          j = 0,
+	          e = 0,
+	          t = 0;
+	      var I = [],
+	          C = [];
+	      for (i = 0; i < dim; i++) {
+	        I[I.length] = [];
+	        C[C.length] = [];
+	        for (j = 0; j < dim; j++) {
+	          if (i == j) {
+	            I[i][j] = 1;
+	          } else {
+	            I[i][j] = 0;
+	          }
+	          C[i][j] = M[i][j];
 	        }
-	        result += "\n";
 	      }
-	      document.getElementById("rez").value = result;
+	      for (i = 0; i < dim; i++) {
+	        e = C[i][i];
+	        if (e == 0) {
+	          for (ii = i + 1; ii < dim; ii++) {
+	            if (C[ii][i] != 0) {
+	              for (j = 0; j < dim; j++) {
+	                e = C[i][j];
+	                C[i][j] = C[ii][j];
+	                C[ii][j] = e;
+	                e = I[i][j];
+	                I[i][j] = I[ii][j];
+	                I[ii][j] = e;
+	              }
+	              break;
+	            }
+	          }
+	          e = C[i][i];
+	          if (e == 0) {
+	            document.getElementById("rez").value = "Matrix not invertable";
+	            return;
+	          }
+	        }
+	        for (j = 0; j < dim; j++) {
+	          C[i][j] = C[i][j] / e;
+	          I[i][j] = I[i][j] / e;
+	        }
+	        for (ii = 0; ii < dim; ii++) {
+	          if (ii == i) {
+	            continue;
+	          }
+	          e = C[ii][i];
+	          for (j = 0; j < dim; j++) {
+	            C[ii][j] -= e * C[i][j];
+	            I[ii][j] -= e * I[i][j];
+	          }
+	        }
+	      }
+	      for (i = 0; i < dim; i++) {
+	        for (j = 0; j < dim; j++) {
+	          document.getElementById("rez").value += I[i][j] + ' ';
+	        }
+	        document.getElementById("rez").value += '\n';
+	      }
 	    }
 	  }, {
 	    key: 'render',
