@@ -46946,7 +46946,7 @@
 	    _react2.default.createElement(
 	      'h2',
 	      { className: 'title' },
-	      'Matrix Power'
+	      'Matrix Inverse'
 	    ),
 	    _react2.default.createElement(InverseCalc, null),
 	    _react2.default.createElement(
