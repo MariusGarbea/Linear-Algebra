@@ -46725,9 +46725,9 @@
 	                _react2.default.createElement(
 	                  _reactBootstrap.ControlLabel,
 	                  { className: 'controllabel' },
-	                  'Matrix 1'
+	                  'Matrix'
 	                ),
-	                _react2.default.createElement(_reactBootstrap.FormControl, { componentClass: 'textarea', placeholder: 'Matrix 1 elements separated by space', style: { margin: "auto" } })
+	                _react2.default.createElement(_reactBootstrap.FormControl, { componentClass: 'textarea', placeholder: 'Matrix elements separated by space', style: { margin: "auto" } })
 	              ),
 	              _react2.default.createElement('input', { id: 'size', type: 'number', placeholder: 'Size', min: '1', max: '1000', style: { width: "200px" } })
 	            ),
@@ -46868,9 +46868,9 @@
 	                _react2.default.createElement(
 	                  _reactBootstrap.ControlLabel,
 	                  { className: 'controllabel' },
-	                  'Matrix 1'
+	                  'Matrix'
 	                ),
-	                _react2.default.createElement(_reactBootstrap.FormControl, { componentClass: 'textarea', placeholder: 'Matrix 1 elements separated by space', style: { margin: "auto" } })
+	                _react2.default.createElement(_reactBootstrap.FormControl, { componentClass: 'textarea', placeholder: 'Matrix elements separated by space', style: { margin: "auto" } })
 	              ),
 	              _react2.default.createElement('input', { id: 'size', type: 'number', placeholder: 'Size', min: '1', max: '100', style: { width: "200px" } })
 	            ),
@@ -47064,9 +47064,9 @@
 	                _react2.default.createElement(
 	                  _reactBootstrap.ControlLabel,
 	                  { className: 'controllabel' },
-	                  'Matrix 1'
+	                  'Matrix'
 	                ),
-	                _react2.default.createElement(_reactBootstrap.FormControl, { componentClass: 'textarea', placeholder: 'Matrix 1 elements separated by space', style: { margin: "auto" } })
+	                _react2.default.createElement(_reactBootstrap.FormControl, { componentClass: 'textarea', placeholder: 'Matrix elements separated by space', style: { margin: "auto" } })
 	              ),
 	              _react2.default.createElement('input', { id: 'size', type: 'number', placeholder: 'Size', min: '1', max: '100', style: { width: "200px" } })
 	            ),
@@ -47169,28 +47169,51 @@
 	  _createClass(GaussCalc, [{
 	    key: 'solve',
 	    value: function solve() {
-	      var r1 = [],
+	      var A = [],
 	          result = "";
 	      var mat1 = document.getElementById("matrix1").value.split(/\s+/);
-	      var nrC1 = document.getElementById("columnsNumber1").value;
-	      var nrL1 = document.getElementById("rowsNumber1").value;
-	      var L1 = parseInt(nrL1, 10);
-	      var C1 = parseInt(nrC1, 10);
+	      var constants = document.getElementById("constants").value.split(/\s+/);
+	      var size = parseInt(document.getElementById("size").value, 10);
+	      for (var i = 0; i < size; i++) {
+	        mat1.splice((i + 1) * size + i, 0, constants[i]);
+	      }
 	      while (mat1[0]) {
-	        r1.push(mat1.splice(0, C1));
+	        A.push(mat1.splice(0, size + 1));
 	      }
-	      if (L1 !== C1) {
-	        document.getElementById("rez").value = "Matrix is not a Square Matrix.";
-	      } else {
-	        for (var i = 0; i < L1; i++) {
-	          for (var j = 0; j < C1; j++) {
-	            var a = parseInt(r1[j][i]);
-	            result += a.toString() + " ";
+	      for (var i = 0; i < size; i++) {
+	        var maxElement = Math.abs(parseInt(A[i][i]));
+	        var maxRow = i;
+	        for (var k = i + 1; k < size; k++) {
+	          if (Math.abs(A[k][i]) > maxElement) {
+	            maxElement = Math.abs(A[k][i]);
+	            maxRow = k;
 	          }
-	          result += "\n";
 	        }
-	        document.getElementById("rez").value = result;
+	        for (var k = i; k < size + 1; k++) {
+	          var aux = parseInt(A[maxRow][k]);
+	          A[maxRow][k] = A[i][k];
+	          A[i][k] = aux;
+	        }
+	        for (k = i + 1; k < size; k++) {
+	          var c = -A[k][i] / A[i][i];
+	          for (var j = i; j < size + 1; j++) {
+	            if (i == j) {
+	              A[k][j] = 0;
+	            } else {
+	              A[k][j] += c * A[i][j];
+	            }
+	          }
+	        }
 	      }
+	      var rez = new Array(size);
+	      for (var i = size - 1; i > -1; i--) {
+	        rez[i] = A[i][size] / A[i][i];
+	        result += rez[i] + '\n';
+	        for (var k = i - 1; k > -1; k--) {
+	          A[k][size] -= A[k][i] * rez[i];
+	        }
+	      }
+	      document.getElementById("rez").value = result;
 	    }
 	  }, {
 	    key: 'render',
@@ -47213,12 +47236,11 @@
 	                _react2.default.createElement(
 	                  _reactBootstrap.ControlLabel,
 	                  { className: 'controllabel' },
-	                  'Matrix 1'
+	                  'Matrix'
 	                ),
-	                _react2.default.createElement(_reactBootstrap.FormControl, { componentClass: 'textarea', placeholder: 'Matrix 1 elements separated by space', style: { margin: "auto" } })
+	                _react2.default.createElement(_reactBootstrap.FormControl, { componentClass: 'textarea', placeholder: 'Matrix elements separated by space', style: { margin: "auto" } })
 	              ),
-	              _react2.default.createElement('input', { id: 'rowsNumber1', type: 'number', placeholder: 'Rows', min: '1', max: '100' }),
-	              _react2.default.createElement('input', { id: 'columnsNumber1', type: 'number', placeholder: 'Columns', min: '1', max: '100' })
+	              _react2.default.createElement('input', { id: 'size', type: 'number', placeholder: 'Size', min: '1', max: '100', style: { width: "200px" } })
 	            ),
 	            _react2.default.createElement(
 	              _reactBootstrap.Col,

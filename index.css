@@ -113,8 +113,8 @@ hr.style-one {
 /* QUIZ SECTION */
 
 span {
-  vertical-align: sub;
-  font-size: 66%;
+    vertical-align: sub;
+    font-size: 66%;
 }
 
 /* CALCULATOR SECTION */
@@ -142,29 +142,29 @@ span {
 }
 
  #power {
-  height: 40px;
-  width: 100px;
-  text-align: center;
-  font-size: 20px;
-  margin-right: 20px;
-  border-radius: 6px;
-  border: double;
+   height: 40px;
+   width: 100px;
+   text-align: center;
+   font-size: 20px;
+   margin-right: 20px;
+   border-radius: 6px;
+   border: double;
  }
 
  .img {
-  width: 40%;
-  padding-top: 10vh;
-  padding-bottom: 10vh;
-  text-align: center;
+   width: 40%;
+   padding-top: 10vh;
+   padding-bottom: 10vh;
+   text-align: center;
  }
 
  .controllabel {
-  font-size: 20px;
-  font-family: 'Cantarell', sans-serif;
+   font-size: 20px;
+   font-family: 'Cantarell', sans-serif;
  }
 
  textarea {
-  max-width: 350px;
+   max-width: 350px;
  }
 
 /* ABOUT SECTION */
