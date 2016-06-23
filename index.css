@@ -163,6 +163,10 @@ span {
    font-family: 'Cantarell', sans-serif;
  }
 
+ textarea {
+   max-width: 350px;
+ }
+
 /* ABOUT SECTION */
 
 .aboutimg {
