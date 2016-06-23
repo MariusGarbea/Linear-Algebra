@@ -12,6 +12,7 @@ import Multiplication from './Multiplication';
 import Power from './Power';
 import Transpose from './Transpose';
 import Inverse from './Inverse';
+import Gauss from './Gauss';
 import About from './About';
 import Fun from './Fun';
 
@@ -28,6 +29,7 @@ const App = () => (
     <Route path="calculator/power" component={Power} />
     <Route path="calculator/transpose" component={Transpose} />
     <Route path="calculator/inverse" component={Inverse} />
+    <Route path="calculator/gauss" component={Gauss} />
     <Route path="about" component={About} />
     <Route path="fun" component={Fun} />
    </Route>
@@ -96,7 +98,8 @@ const Titles = () => (
     <Link to="calculator/multiplication"><Button bsClass="bttn"><strong>Multiplication</strong></Button></Link><br />
     <Link to="calculator/power"><Button bsClass="bttn"><strong>Power</strong></Button></Link><br />
     <Link to="calculator/transpose"><Button bsClass="bttn"><strong>Transpose</strong></Button></Link><br />
-    <Link to="calculator/inverse"><Button bsClass="bttn"><strong>Inverse</strong></Button></Link>
+    <Link to="calculator/inverse"><Button bsClass="bttn"><strong>Inverse</strong></Button></Link><br />
+    <Link to="calculator/gauss"><Button bsClass="bttn"><strong>Solve system</strong></Button></Link>
   </div>
 )
 

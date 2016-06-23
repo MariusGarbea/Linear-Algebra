@@ -15,7 +15,7 @@ const Tutorial = () => (
         <li>x*(A+B) = x*A + x*B, where x is a scalar (distributive law for scalar products)</li> <br />
         <li>C*(A+B) = C*A + C*B, provided the products are defined (distributive law for matrix multiplication)</li> <br />
       </p>
-      <Button bsClass="bttn" href="../multimedia/matrici.jpg">Download our Cheat Sheet</Button>
+      <Button bsClass="bttn" href="multimedia/matrici.jpg">Download our Cheat Sheet</Button>
     </div>
     <h2 className="mathquotes"><i>In mathematics the art of proposing a question must be held of higher value than solving it. ~ Georg Cantor</i></h2>
   </div>

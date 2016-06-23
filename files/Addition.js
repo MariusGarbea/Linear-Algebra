@@ -49,7 +49,7 @@ class PlusCalc extends React.Component {
 
   render() {
     return (
-     <form style={{textAlign: "center", paddingTop: "20vh", paddingBottom: "20vh", background: "url(multimedia/paper.jpg)"}}>
+     <form className="calc">
       <Grid>
        <Row>
         <Col md={4} xs={12}>
@@ -57,16 +57,16 @@ class PlusCalc extends React.Component {
           <ControlLabel className="controllabel">Matrix 1</ControlLabel>
           <FormControl componentClass="textarea" placeholder="Matrix 1 elements separated by space" style={{margin: "auto"}} />
          </FormGroup>
-         <input id="rowsNumber1" type="number" placeholder="Rows" min = "1" max = "10"/>
-         <input id="columnsNumber1" type="number" placeholder="Columns" min = "1" max = "10"/>
+         <input id="rowsNumber1" type="number" placeholder="Rows" min = "1" max = "100"/>
+         <input id="columnsNumber1" type="number" placeholder="Columns" min = "1" max = "100"/>
         </Col>
         <Col md={4} xs={12}>
           <FormGroup controlId="matrix2">
            <ControlLabel className="controllabel">Matrix 2</ControlLabel>
            <FormControl componentClass="textarea" placeholder="Matrix 2 elements separated by space" style={{margin: "auto"}} />
           </FormGroup>
-          <input id="rowsNumber2" type="number" placeholder="Rows" min = "1" max = "10"/>
-          <input id="columnsNumber2" type="number" placeholder="Columns" min = "1" max = "10"/>
+          <input id="rowsNumber2" type="number" placeholder="Rows" min = "1" max = "100"/>
+          <input id="columnsNumber2" type="number" placeholder="Columns" min = "1" max = "100"/>
          </Col>
          <Col md={4} xs={12}>
           <FormGroup controlId="rez">

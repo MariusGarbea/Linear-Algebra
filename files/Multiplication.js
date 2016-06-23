@@ -52,7 +52,7 @@ class TimesCalc extends React.Component {
 
   render() {
     return (
-     <form style={{textAlign: "center", paddingTop: "20vh", paddingBottom: "20vh", background: "url(multimedia/paper.jpg)"}}>
+     <form className="calc">
       <Grid>
        <Row>
         <Col md={4} xs={12}>
