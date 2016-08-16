@@ -1527,7 +1527,7 @@
 	 * LICENSE file in the root directory of this source tree. An additional grant
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
-	 * 
+	 *
 	 */
 
 	function makeEmptyFunction(arg) {
@@ -12084,7 +12084,7 @@
 	 * LICENSE file in the root directory of this source tree. An additional grant
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
-	 * 
+	 *
 	 * @typechecks static-only
 	 */
 
@@ -16248,7 +16248,7 @@
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
 	 * @typechecks
-	 * 
+	 *
 	 */
 
 	/*eslint-disable no-self-compare */
@@ -18076,7 +18076,7 @@
 	 * LICENSE file in the root directory of this source tree. An additional grant
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
-	 * 
+	 *
 	 */
 
 	var isTextNode = __webpack_require__(144);
@@ -40171,7 +40171,7 @@
 	 * nested.
 	 *
 	 *   import { Route, createRoutesFromReactChildren } from 'react-router'
-	 *   
+	 *
 	 *   const routes = createRoutesFromReactChildren(
 	 *     <Route component={App}>
 	 *       <Route path="home" component={Dashboard}/>
@@ -45479,11 +45479,11 @@
 	      "This simple web app represents our entry for the renowned national contest ",
 	      _react2.default.createElement(
 	        "a",
-	        { href: "https://infoeducatie.ro/", target: "_blank", style: { textDecoration: "none" } },
+	        { href: "http://grepit.info/", target: "_blank", style: { textDecoration: "none" } },
 	        _react2.default.createElement(
 	          "i",
 	          { style: { color: "#FE6162" } },
-	          "Infoeducatie"
+	          "GREPIT"
 	        )
 	      ),
 	      ". We anticipated the need of a simple and quick way to learn Linear Algebra and so came up with both a tutorial part and a Matrix operations calculator for the power of example. Hope you like it! :) "
