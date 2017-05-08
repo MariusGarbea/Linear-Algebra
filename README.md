@@ -2,7 +2,9 @@
 
 
 ## What is this site about?
----
+
+
+
 We wanted to create a simple and fun application about Linear Algebra and the basics of it. Our website is ment to help students who struggle with learning algebra, or just help them remember the basics.  
 The site we created is user-friendly, so you don't need much time to figure around how it works! You are a click away from filling your brain with freshly information.  
 ---
