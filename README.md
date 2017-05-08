@@ -14,7 +14,7 @@ The site we created is user-friendly, so you don't need much time to figure arou
 * About us  
 ---  
 ## Tools we used  
-Well it's not **evrything** but those are the most important: react, npm, babel, webpack
+Well it's not **everything** but those are the most important: react, npm, babel, webpack
 
 --- 
 
