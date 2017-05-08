@@ -1,27 +1,22 @@
-# A short introduction to our website
+# A short introduction to our app
 
+## What's the deal?
+This app helps students who struggle with learning linear algebra understand the theoretical basis and then consolidate their newly gained knowledge by solving quizzes.
+The app is meant to be used by both current students seeking to get the gist of linear algebra and long time graduates ready to refresh their knowledge.
+Being user-friendly, you can jump right in and get your feet wet with some math!
 
-## What is this site about?
-We wanted to create a simple and fun application about Linear Algebra and the basics of it. Our website is ment to help students who struggle with learning algebra, or just help them remember the basics.  
-The site we created is user-friendly, so you don't need much time to figure around how it works! You are a click away from filling your brain with freshly information.  
-
-## We created 6 interactive pages that can help you complete your journey:  
+## The app contains 6 interactive pages that can help you complete your journey:
 * Tutorial
 * Examples
 * Quiz
-* Different Algorithms that were implemented
+* Calculator based on different algorithms
 * Fun facts about math
 * About us  
----  
-## Tools we used  
-Well it's not **everything** but those are the most important: react, npm, babel, webpack
 
---- 
+## Tools used
+* React (for the logic and UI)
+* npm (for managing the packages)
+* Webpack (for bundling the app)
+* Babel (for compiling ES6 JS)
 
-## What inspired us?  
-Well to be honest, it is really hard to tell what inspired us in the first point. We started by thinking about building a site that helps the user to learn something, but our passion for math took over and we agreed to do something like this. The key is not to give up, just keep going and you will do it! 
-
----  
-
-
-*If you have any suggestions feel free to contact us :)*
+*If you have any suggestions feel free to open a PR or contact us :)*
